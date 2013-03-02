@@ -1,3 +1,5 @@
+module P2 (p2, fib) where
+
 fib :: [Int]
 fib = 1 : 2 : zipWith (+) fib (tail fib)
 
