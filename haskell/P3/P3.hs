@@ -1,3 +1,5 @@
+module P3 (p3, primes) where
+
 primes :: [Int]
 primes = 2 : sieve [3,5..]
     where sieve (p:xs) = p : sieve [x | x <- xs, rem x p /= 0]
@@ -20,7 +22,7 @@ dividers' (x, p:ps, ds)
     | x `mod` p == 0 = dividers' (x `div` p, p:ps, p:ds)
     | otherwise = dividers' (x, ps, ds)
 
-
-main = print $ maximum [ x | x <- dividers n, isPrime x ]
+p3 = maximum [ x | x <- dividers n, isPrime x ]
     where n = 600851475143
 
+main = print p3
