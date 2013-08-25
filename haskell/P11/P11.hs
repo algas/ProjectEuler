@@ -1,3 +1,5 @@
+module P11 (p11) where
+
 import Data.List
 type Grids = [[Int]]
 
@@ -41,7 +43,8 @@ fourGrids = [f ms | f <- [id, transpose, reverse, transpose . reverse]]
 diagGrids :: [Grids]
 diagGrids = [[diagonal grids | f <- [tails, tails . transpose, tails . map reverse, tails . transpose . map reverse], grids <- f ms]]
 
-
+p11 :: Int
 p11 = maximum [product xs | grid <- fourGrids ++ diagGrids, xs <- (flatten (map pack4 grid))]
 
+main :: IO ()
 main = print p11
