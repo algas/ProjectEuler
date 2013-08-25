@@ -1,13 +1,19 @@
+module P10 (p10) where
+
 import Data.List
 
 sum' :: (Num a) => [a] -> a
 sum'= foldl' (+) 0
 
 primes :: [Integer]
-primes = 2 : sieve [3,5..]
-    where sieve (p:xs) = p : sieve [x | x <- xs, rem x p /= 0]
+primes = 2 : primes' [3] (enumFromThen 3 5)
 
-p10 :: [Integer]
-p10 = takeWhile (<2000000) primes
+primes' :: [Integer] -> [Integer] -> [Integer]
+primes' (x:xs) ys = ps ++ primes' (xs ++ ps) [q | q <- qs, q `mod` x /= 0]
+    where
+        (ps, qs) = span (< x^2) ys
 
-main = print $ sum' $ p10
+p10 :: Integer
+p10 = sum' $ takeWhile (<2000000) primes
+
+main = print $ p10
