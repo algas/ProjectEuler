@@ -1,3 +1,5 @@
+module P9 (p9) where
+
 c :: Int -> Int -> Int
 c a b = 1000 - (a + b)
 
