@@ -1,8 +1,10 @@
-import Test.Hspec
-import P3
+module P3Spec where
 
-main :: IO ()
-main = hspec $ do
+import           P3
+import           Test.Hspec
+
+spec :: Spec
+spec = do
     describe "primes" $ do
         it "take 10 primes" $
             take 10 primes `shouldBe` [2,3,5,7,11 ,13,17,19,23,29]

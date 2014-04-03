@@ -1,8 +1,10 @@
-import Test.Hspec
-import P4
+module P4Spec where
 
-main :: IO ()
-main = hspec $ do
+import           P4
+import           Test.Hspec
+
+spec :: Spec
+spec = do
     describe "isPalindromic" $ do
         it "isPalindromic 121" $
             isPalindromic 121 `shouldBe` True

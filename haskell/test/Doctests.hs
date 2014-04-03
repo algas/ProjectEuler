@@ -1,10 +1,11 @@
 module Main where
 
 import           Test.DocTest
+import System.FilePath.Glob
 
 -- testFiles = src/Pxx.hs
-testFiles :: [FilePath]
-testFiles = map (("src/P"++) . (++".hs") . show) [1..2]
+testFiles :: IO [FilePath]
+testFiles = glob "src/P*.hs"
 
 main :: IO ()
-main = doctest testFiles
+main = testFiles >>= doctest
