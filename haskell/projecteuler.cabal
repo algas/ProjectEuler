@@ -30,6 +30,7 @@ test-suite spec
   default-language:    Haskell2010
   build-depends:       base >=4.6 && <4.7
                      , hspec >=1.8.3 && <1.9
+                     , containers >=0.5 && <0.6
 
 test-suite doctest
   main-is:             Doctests.hs
@@ -39,4 +40,5 @@ test-suite doctest
   default-language:    Haskell2010
   build-depends:       base >=4.6 && <4.7
                      , doctest >=0.9.10 && <0.10
+                     , containers >=0.5 && <0.6
 
