@@ -7,4 +7,5 @@ p6' m = (f * f) - (sum [x*x | x <- [1..m]])
 p6 :: Int
 p6 = p6' 100
 
+main :: IO ()
 main = print $ p6

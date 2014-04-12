@@ -16,4 +16,5 @@ primes' (x:xs) ys = ps ++ primes' (xs ++ ps) [q | q <- qs, q `mod` x /= 0]
 p10 :: Integer
 p10 = sum' $ takeWhile (<2000000) primes
 
+main :: IO ()
 main = print $ p10
