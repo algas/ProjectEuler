@@ -1,7 +1,7 @@
 module P10Spec where
 
-import Test.Hspec
-import P10
+import           P10
+import           Test.Hspec
 
 spec :: Spec
 spec = do

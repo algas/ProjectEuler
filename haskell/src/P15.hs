@@ -1,3 +1,5 @@
+module P15 (p15) where
+
 factorial :: Integer -> Integer
 factorial 0 = 1
 factorial n = n * factorial (n - 1)
@@ -11,4 +13,5 @@ pascalTriangle n = [combination n r | r <- [0..n]]
 p15 :: Integer -> Integer
 p15 n = sum [x * x | x <- pascalTriangle n]
 
+main :: IO ()
 main = print $ p15 20

@@ -1,3 +1,5 @@
+module P13 (p13) where
+
 digits :: [Integer]
 digits = [
      37107287533902102798797998220837590246510135740250
@@ -102,6 +104,8 @@ digits = [
     ,53503534226472524250874054075591789781264330331690
     ]
 
-p13 = take 10 $ show $ sum digits
+p13 :: Integer
+p13 = read $ take 10 $ show $ sum digits
 
-main = putStrLn p13
+main :: IO ()
+main = print p13

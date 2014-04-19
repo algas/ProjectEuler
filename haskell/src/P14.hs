@@ -1,3 +1,5 @@
+module P14 (p14) where
+
 import Data.List
 import Data.Ord
 
@@ -13,5 +15,5 @@ pchain x = x : pchain (p x)
 p14 :: Int -> (Int, Int)
 p14 x = maximumBy (comparing snd) [(n, length (pchain n)) | n <- [1..x]]
 
+main :: IO ()
 main = print $ fst $ p14 1000000
-

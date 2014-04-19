@@ -1,6 +1,7 @@
 module P11 (p11) where
 
-import Data.List
+import           Data.List
+
 type Grids = [[Int]]
 
 ms :: Grids
